@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"
+         [ngStyle]="{ 'color': product.isFeatured ? 'yellow' : 'black' }"
+          class="text-truncate">
+        {{ product.productName }}
+      </h5>
+      <p class="card-text description">
+        {{ product.description }}
+      </p>
+      <p class="card-text">Price: {{ product.price }}</p>
+      <p class="card-text">Manufacturer: {{ product.manufacturer }}</p>
+      <p class="card-text">Supply: {{ product.supply }}</p>
+    </div>
+  </div>
+  

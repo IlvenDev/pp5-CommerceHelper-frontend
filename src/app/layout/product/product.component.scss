@@ -1,0 +1,27 @@
+.card {
+    width: 18rem;
+    height: 18rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+  
+    .card-body {
+      .card-title {
+        &.text-truncate {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+  
+      .description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+  

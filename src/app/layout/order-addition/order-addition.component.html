@@ -1,0 +1,56 @@
+<div class="container">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+  
+      <div class="form-group mb-3">
+        <label for="productName">Product Name <span class="text-danger">*</span></label>
+        <input id="productName" type="text" class="form-control" formControlName="productName" placeholder="Enter product name" aria-required="true" required>
+        <div *ngIf="orderForm.get('productName')?.invalid && orderForm.get('productName')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Product name is required.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="quantity">Quantity <span class="text-danger">*</span></label>
+        <input id="quantity" type="number" class="form-control" formControlName="quantity" placeholder="Enter quantity" min="1" aria-required="true" required>
+        <div *ngIf="orderForm.get('quantity')?.invalid && orderForm.get('quantity')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Quantity must be a positive number.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="orderDate">Order Date <span class="text-danger">*</span></label>
+        <input id="orderDate" type="date" class="form-control" formControlName="orderDate" aria-required="true" required>
+        <div *ngIf="orderForm.get('orderDate')?.invalid && orderForm.get('orderDate')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Order date is required.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="customerId">Customer ID <span class="text-danger">*</span></label>
+        <input id="customerId" type="number" class="form-control" formControlName="customerId" placeholder="Enter customer ID" aria-required="true" required>
+        <div *ngIf="orderForm.get('customerId')?.invalid && orderForm.get('customerId')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Customer ID is required.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="discountAmount">Discount Amount</label>
+        <input id="discountAmount" type="number" class="form-control" formControlName="discountAmount" placeholder="Enter discount amount" min="0">
+        <div *ngIf="orderForm.get('discountAmount')?.invalid && orderForm.get('discountAmount')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Discount amount must be a positive number or zero.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="totalAmount">Total Amount <span class="text-danger">*</span></label>
+        <input id="totalAmount" type="number" class="form-control" formControlName="totalAmount" placeholder="Enter total amount" min="0" aria-required="true" required>
+        <div *ngIf="orderForm.get('totalAmount')?.invalid && orderForm.get('totalAmount')?.touched" class="text-danger" role="alert" aria-live="assertive">
+          Total amount must be a positive number.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="orderForm.invalid" [attr.aria-disabled]="orderForm.invalid ? 'true' : 'false'">Add order</button>
+  
+    </form>
+  </div>
+  
