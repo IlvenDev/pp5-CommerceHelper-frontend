@@ -1,5 +1,6 @@
 <div class="container">
-    <a class="btn btn-primary mb-2" href="customers/add-customer" role="button">Add customer</a>
+    <h2 class="visually-hidden">Customer Management</h2>
+    <a class="btn btn-primary mb-2" href="customers/add-customer" role="button">Add Customer</a>
     <div class="row">
         <div class="col-md-6" *ngFor="let customer of customers">
             <app-customer [customer]="customer"></app-customer>

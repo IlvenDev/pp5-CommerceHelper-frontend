@@ -1,6 +1,6 @@
 <div class="container">
-    <a class="btn btn-primary mb-2" href="products/add-product" role="button">Add product</a>
-    <div class="row">
+    <a class="btn btn-primary mb-2" href="products/add-product" role="button" aria-label="Add a new product">Add product</a>
+    <div class="row" aria-label="Product list">
         <div class="col-md-3" *ngFor="let product of products">
             <app-product [product]="product"></app-product>
         </div>

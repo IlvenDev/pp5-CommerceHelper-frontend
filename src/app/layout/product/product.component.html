@@ -1,16 +1,13 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"
-         [ngStyle]="{ 'color': product.isFeatured ? 'yellow' : 'black' }"
-          class="text-truncate">
-        {{ product.productName }}
-      </h5>
-      <p class="card-text description">
-        {{ product.description }}
-      </p>
-      <p class="card-text">Price: {{ product.price }}</p>
-      <p class="card-text">Manufacturer: {{ product.manufacturer }}</p>
-      <p class="card-text">Supply: {{ product.supply }}</p>
-    </div>
+<div class="card text-bg-secondary" style="width: 18rem;" role="region" aria-labelledby="card-title">
+  <div class="card-body">
+    <h5 class="card-title" id="card-title" 
+        [ngStyle]="{ 'color': product.isFeatured ? '#165F3B' : 'black' }" 
+        class="text-truncate">
+      {{ product.productName }}
+    </h5>
+    <p class="card-text description" aria-label="Description">{{ product.description }}</p>
+    <p class="card-text" aria-label="Price">Price: {{ product.price }}</p>
+    <p class="card-text" aria-label="Manufacturer">Manufacturer: {{ product.manufacturer }}</p>
+    <p class="card-text" aria-label="Supply">Supply: {{ product.supply }}</p>
   </div>
-  
+</div>

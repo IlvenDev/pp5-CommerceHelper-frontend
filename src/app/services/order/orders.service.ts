@@ -7,7 +7,7 @@ import { Order } from '../../../types';
   providedIn: 'root'
 })
 export class OrdersService {
-  private apiBaseUrl = 'http://localhost:8888/api/orders';
+  private apiBaseUrl = 'http://backend.localhost/api/orders';
 
   constructor(private apiService: ApiService) { }
 

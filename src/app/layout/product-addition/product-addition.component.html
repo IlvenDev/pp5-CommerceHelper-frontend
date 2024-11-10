@@ -1,47 +1,48 @@
-<div class="container">
-    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
-      
-      <div class="form-group mb-3">
-        <label for="productName">Product Name <span class="text-danger">*</span></label>
-        <input id="productName" type="text" class="form-control" formControlName="productName" placeholder="Enter product name" aria-required="true" required>
-        <div *ngIf="productForm.get('productName')?.invalid && productForm.get('productName')?.touched" class="text-danger" role="alert" aria-live="assertive">
-          Product name is required.
-        </div>
-      </div>
-  
-      <div class="form-group mb-3">
-        <label for="description">Description</label>
-        <textarea id="description" class="form-control" formControlName="description" rows="3" placeholder="Enter product description"></textarea>
-      </div>
-  
-      <div class="form-group mb-3">
-        <label for="price">Price <span class="text-danger">*</span></label>
-        <input id="price" type="number" class="form-control" formControlName="price" placeholder="Enter price" min="0" aria-required="true" required>
-        <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger" role="alert" aria-live="assertive">
-          Price must be a positive number.
-        </div>
-      </div>
-  
-      <div class="form-group mb-3">
-        <label for="manufacturer">Manufacturer</label>
-        <input id="manufacturer" type="text" class="form-control" formControlName="manufacturer" placeholder="Enter manufacturer">
-      </div>
-  
-      <div class="form-group mb-3">
-        <label for="supply">Supply <span class="text-danger">*</span></label>
-        <input id="supply" type="number" class="form-control" formControlName="supply" placeholder="Enter supply quantity" min="0" aria-required="true" required>
-        <div *ngIf="productForm.get('supply')?.invalid && productForm.get('supply')?.touched" class="text-danger" role="alert" aria-live="assertive">
-          Supply quantity must be a positive number.
-        </div>
-      </div>
-  
-      <div class="form-check mb-3">
-        <input id="isFeatured" type="checkbox" class="form-check-input" formControlName="isFeatured" aria-labelledby="isFeaturedLabel">
-        <label for="isFeatured" id="isFeaturedLabel" class="form-check-label">Featured Product</label>
-      </div>
-  
-      <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid || isSubmitDisabled" [attr.aria-disabled]="productForm.invalid ? 'true' : 'false'">Add product</button>
+<div class="container text-secondary">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate aria-labelledby="form-title">
+    
+    <h2 id="form-title" class="visually-hidden">Product Form</h2>
 
-    </form>
-  </div>
-  
+    <div class="form-group mb-3">
+      <label for="productName">Product Name <span class="text-danger">*</span></label>
+      <input id="productName" type="text" class="form-control" formControlName="productName" placeholder="Enter product name" aria-required="true" required>
+      <div *ngIf="productForm.get('productName')?.invalid && productForm.get('productName')?.touched" class="text-danger" role="alert" aria-live="assertive">
+        Product name is required.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="description">Description</label>
+      <textarea id="description" class="form-control" formControlName="description" rows="3" placeholder="Enter product description"></textarea>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="price">Price <span class="text-danger">*</span></label>
+      <input id="price" type="number" class="form-control" formControlName="price" placeholder="Enter price" min="0" aria-required="true" required>
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger" role="alert" aria-live="assertive">
+        Price must be a positive number.
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="manufacturer">Manufacturer</label>
+      <input id="manufacturer" type="text" class="form-control" formControlName="manufacturer" placeholder="Enter manufacturer">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="supply">Supply <span class="text-danger">*</span></label>
+      <input id="supply" type="number" class="form-control" formControlName="supply" placeholder="Enter supply quantity" min="0" aria-required="true" required>
+      <div *ngIf="productForm.get('supply')?.invalid && productForm.get('supply')?.touched" class="text-danger" role="alert" aria-live="assertive">
+        Supply quantity must be a positive number.
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input id="isFeatured" type="checkbox" class="form-check-input" formControlName="isFeatured" aria-labelledby="isFeaturedLabel">
+      <label for="isFeatured" id="isFeaturedLabel" class="form-check-label">Featured Product</label>
+    </div>
+
+    <button type="submit" class="btn btn-secondary" [disabled]="productForm.invalid || isSubmitDisabled" [attr.aria-disabled]="productForm.invalid ? 'true' : 'false'">Add product</button>
+
+  </form>
+</div>

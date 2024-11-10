@@ -1,23 +1,13 @@
-<div class="card text-bg-light mb-3" style="width: 40rem; height: 15rem;">
-    <div class="card-header">{{customer.id}} | {{customer.firstName}} {{customer.lastName}}</div>
-    <div class="card-body">
-      <p class="card-text"><b>Email:</b> {{customer.email}}</p>
-      <p class="card-text"><b>Phone:</b> {{customer.phone}}</p>
-      <p class="card-text"><b>Address:</b> {{customer.address}} - {{customer.city}}, {{customer.state}} | {{customer.zip}} | {{customer.country}}</p>
-      <p class="card-text"><b>Date of birth:</b> {{customer.birthDate | date:'MMMM d, y'}}</p>
-    </div>
+<div class="card text-bg-light mb-3" style="width: 40rem; height: 17rem;" role="region">
+  <div class="card-header">
+      <h2 class="customer-name">
+          {{customer.id}} | {{customer.firstName}} {{customer.lastName}}
+      </h2>
   </div>
-
-<!-- 
-    customerId: number
-    firstName: string
-    lastName: string
-    email: string
-    phone: string
-    address: string
-    city: string
-    state: string
-    zip: string
-    country: string
-    birthDate: Date  
--->
+  <div class="card-body">
+      <p class="card-text"><strong>Email:</strong> {{customer.email}}</p>
+      <p class="card-text"><strong>Phone:</strong> {{customer.phone}}</p>
+      <p class="card-text"><strong>Address:</strong> {{customer.address}} - {{customer.city}}, {{customer.state}} | {{customer.zip}} | {{customer.country}}</p>
+      <p class="card-text"><strong>Date of birth:</strong> {{customer.birthDate | date:'MMMM d, y'}}</p>
+  </div>
+</div>
